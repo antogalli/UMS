@@ -1,10 +1,11 @@
 import {Injectable} from '@angular/core';
-import {User} from '../interfaces/user';
+import { UserInterface} from '../interfaces/user';
+import {User} from '../classes/User';
 
 
 @Injectable()
 export class UserService {
-  users: User[]  = [
+  users: User[] = [
     {
       id: 1,
       nome: 'Antonio',
@@ -39,15 +40,32 @@ export class UserService {
     }
   ];
 
-  constructor() {}
+  constructor() {
+  }
+
   getUsers() {
     return this.users;
   }
 
   deleteUser(user) {
-    let index = this.users.indexOf(user);
+    const index = this.users.indexOf(user);
     if (index >= 0) {
       this.users.splice(index, 1);
     }
   }
+
+  updateUser(user: UserInterface) {
+    const idx = this.users.findIndex((v) => v.id === user.id);
+    alert(idx);
+    if (idx !== -1) {
+      this.users[idx] = user;
+    }
+  }
+
+  createUser(user: UserInterface) {
+    //this.users.push(user);
+    this.users.splice(0, 0, user);
+  }
+
+
 }
