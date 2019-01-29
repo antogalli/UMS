@@ -1,50 +1,20 @@
 import {Injectable} from '@angular/core';
-import { UserInterface} from '../interfaces/user';
+import {UserInterface} from '../interfaces/user';
 import {User} from '../classes/User';
+import {HttpClient} from '@angular/common/http';
 
 
 @Injectable()
 export class UserService {
-  users: User[] = [
-    {
-      id: 1,
-      nome: 'Antonio',
-      cognome: 'Uno',
-      email: 'ant.uno@gmail.com',
-      codicefiscale: 'GLLKLSDJFKD',
-      provincia: 'Napoli',
-      tel: '123456789',
-      eta: 36
-    }
-    ,
-    {
-      id: 2,
-      nome: 'Antonio',
-      cognome: 'Due',
-      email: 'ant.due@gmail.com',
-      codicefiscale: 'GLLKLSDJFKD',
-      provincia: 'Napoli',
-      tel: '123456789',
-      eta: 36
-    }
-    ,
-    {
-      id: 4,
-      nome: 'Antonio',
-      cognome: 'Tre',
-      email: 'ant.tre@gmail.com',
-      codicefiscale: 'GDLKLSDJFKD',
-      provincia: 'Napoli',
-      tel: '123456789',
-      eta: 36
-    }
-  ];
+  users: User[] = [];
 
-  constructor() {
+  private APIURL = 'http://localhost:8000/users';
+
+  constructor(private http: HttpClient) {
   }
 
   getUsers() {
-    return this.users;
+    return this.http.get(this.APIURL);
   }
 
   getUser(id: number) {
@@ -60,7 +30,6 @@ export class UserService {
 
   updateUser(user: UserInterface) {
     const idx = this.users.findIndex((v) => v.id === user.id);
-    alert(idx);
     if (idx !== -1) {
       this.users[idx] = user;
     }
@@ -68,6 +37,7 @@ export class UserService {
 
   createUser(user: UserInterface) {
     //this.users.push(user);
+    user.id = this.users.length + 1;
     this.users.splice(0, 0, user);
   }
 

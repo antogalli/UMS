@@ -19,6 +19,10 @@ export class UserComponent implements OnInit {
   ngOnInit() {
   }
 
+  showUserDetail() {
+    this.route.navigate(['user', this.user.id]);
+  }
+
   updateUser() {
     this.route.navigate(['users',this.user.id, 'edit']);
     this.onSelectUser.emit(this.user);

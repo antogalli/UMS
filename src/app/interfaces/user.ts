@@ -1,10 +1,10 @@
 export interface UserInterface {
   id: number;
-  nome: string;
-  cognome: string;
+  name: string;
+  lastname: string;
   email: string;
-  codicefiscale: string;
-  provincia: string;
-  tel: string;
-  eta: number;
+  fiscalcode: string;
+  province: string;
+  phone: string;
+  age: number;
 }

@@ -2,22 +2,22 @@ import {UserInterface} from '../interfaces/user';
 
 export class User implements UserInterface {
   id: number;
-  nome: string;
-  cognome: string;
+  name: string;
+  lastname: string;
   email: string;
-  codicefiscale: string;
-  provincia: string;
-  tel: string;
-  eta: number;
+  fiscalcode: string;
+  province: string;
+  phone: string;
+  age: number;
 
   constructor() {
     this.id = 0;
-    this.nome = '';
-    this.cognome = '';
+    this.name = '';
+    this.lastname = '';
     this.email = '';
-    this.codicefiscale = '';
-    this.provincia = '';
-    this.tel = '';
-    this.eta = 18;
+    this.fiscalcode = '';
+    this.province = '';
+    this.phone = '';
+    this.age = 18;
   }
 }

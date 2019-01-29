@@ -14,6 +14,8 @@ import { ModalBasicComponent } from './modal-basic/modal-basic.component';
 import { RouterModule, Routes } from '@angular/router';
 import { UserDataComponent } from './user-data/user-data.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 const routes: Routes = [
   {
     path: 'users',
@@ -34,7 +36,7 @@ const routes: Routes = [
     component: UserDetailComponent
   },
   {
-    path: 'users/:id',
+    path: 'user/:id',
     component: UserDataComponent
   }
 ];
@@ -48,13 +50,14 @@ const routes: Routes = [
     NavComponent,
     ModalBasicComponent,
     UserDataComponent,
-  ],
+      ],
   imports: [
     BrowserModule,
     FormsModule,
     AngularFontAwesomeModule,
     NgbModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
