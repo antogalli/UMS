@@ -1,0 +1,150 @@
+POST http://localhost:8000/users/1?_method=DELETE
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-30T034803.200.json
+
+###
+
+POST http://localhost:8000/users/1?_method=DELETE
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-30T034736.200.json
+
+###
+
+DELETE http://localhost:8000/users/2
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-30T032306.200.json
+
+###
+
+DELETE http://localhost:8000/users/2
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-30T032251.200.json
+
+###
+
+DELETE http://localhost:8000/users/2
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-30T032241.200.json
+
+###
+
+DELETE http://localhost:8000/users/1
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-30T032207.200.json
+
+###
+
+POST http://localhost:8000/users/?name=Antonio5&lastname=Cinque&email=ant.cinque@gmail.com
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-30T024230.200.json
+
+###
+
+POST http://localhost:8000/users/1/?name=Antonio&lastname=tre&email=ant.tre@gmail.com&_method=PUT
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-30T122921.200.json
+
+###
+
+POST http://localhost:8000/users/1/?name=Antonio&lastname=tre&email=ant.tre@gmail.com&_method=PUT
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-30T122905.500.html
+
+###
+
+POST http://localhost:8000/users/1/?name=Antonio&lastname=tre&email=ant.tre@gmail.com&_method=PUT
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-30T122856.500.html
+
+###
+
+POST http://localhost:8000/users/1/?name=Antonio&lastname=tre&email=ant.tre@gmail.com&_method=PUT
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-30T122420.200.json
+
+###
+
+POST http://localhost:8000/users/1/edit?name=Antonio&lastname=tre&email=ant.tre@gmail.com&_method=PUT
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-30T122344.405.html
+
+###
+
+POST http://localhost:8000/users/1?name=Antonio&lastname=tre&email=ant.tre@gmail.com&_method=PUT
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-30T122301.200.json
+
+###
+
+PUT http://localhost:8000/users/1?name=Antonio&lastname=tre&email=ant.tre@gmail.com
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-30T122202.200.json
+
+###
+
+POST http://localhost:8000/users/1?name=Antonio&lastname=tre&email=ant.tre@gmail.com
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-30T122152.405.html
+
+###
+
+POST http://localhost:8000/users?name=Antonio&lastname=tre&email=ant.tre@gmail.com
+Accept: */*
+Cache-Control: no-cache
+
+###
+
+POST http://localhost:8000/users?name=Antonio&lastname=tre&email=ant.tre@gmail.com
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-30T122039.500.html
+
+###
+
+POST http://localhost:8000/users?name=Antonio&lastname=tre&email=ant.tre@gmail.com
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-30T122013.500.html
+
+###
+
+POST http://localhost:8000/users
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-01-30T121937.500.html
+
+###
+

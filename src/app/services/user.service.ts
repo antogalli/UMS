@@ -17,28 +17,25 @@ export class UserService {
     return this.http.get(this.APIURL);
   }
 
-  getUser(id: number) {
-    return this.users.find(users => users.id === id);
+  getUser(id: number)  {
+    return this.http.get(this.APIURL + '/' + id);
   }
 
   deleteUser(user) {
-    const index = this.users.indexOf(user);
-    if (index >= 0) {
-      this.users.splice(index, 1);
-    }
+    const data = { '_method': 'DELETE'};
+    alert('TEST DELETE' + user.id);
+    return this.http.post(this.APIURL + '/' + user.id, data);
+
   }
 
   updateUser(user: UserInterface) {
-    const idx = this.users.findIndex((v) => v.id === user.id);
-    if (idx !== -1) {
-      this.users[idx] = user;
-    }
+      user['_method'] = 'PUT';
+      return this.http.post(this.APIURL + '/' + user.id, user);
   }
 
   createUser(user: UserInterface) {
-    //this.users.push(user);
     user.id = this.users.length + 1;
-    this.users.splice(0, 0, user);
+    return this.http.post(this.APIURL, user);
   }
 
 
