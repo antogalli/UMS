@@ -137,6 +137,7 @@ class UsersController extends Controller
             $User = User::findOrFail($id);
             $data = $User;
             $success = $User->delete();
+            $message = 'è stato cancellato';
 
         } catch (\Exception $e) {
             $success = false;

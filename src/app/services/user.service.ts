@@ -22,10 +22,8 @@ export class UserService {
   }
 
   deleteUser(user) {
-    const data = { '_method': 'DELETE'};
-    alert('TEST DELETE' + user.id);
-    return this.http.post(this.APIURL + '/' + user.id, data);
-
+    user['_method'] = 'DELETE';
+    return this.http.post(this.APIURL + '/' + user.id, user);
   }
 
   updateUser(user: UserInterface) {

@@ -1,36 +1,64 @@
 <form class="userForm" #f="ngForm">
   <input type="hidden" name="id" [(ngModel)]="user.id">
-  <div class="form-group">
-    <label for="firstname">Nome</label>
-    <input [(ngModel)]="user.name"  class="form-control" name="firstname" id="firstname">
+  <div class="form-row">
+    <div class="form-group col-sm-6">
+      <label for="firstname">Nome</label>
+      <input required minlength="3" pattern="[a-zA-Z\s]*" #firstName="ngModel" placeholder="Nome"
+             [(ngModel)]="user.name"
+             class="form-control" name="firstname" id="firstname">
+      <div *ngIf="firstName.dirty && firstName.touched && firstName.invalid">
+        <div class="alert-danger" *ngIf="firstName.errors.required">Il campo nome è obbligatorio</div>
+        <div class="alert-danger" *ngIf="firstName.errors.minlength">La lunghezza minima è
+          di {{firstName.errors.minlength.requiredLength}} caratteri
+        </div>
+        <div class="alert-danger" *ngIf="firstName.errors.pattern">Inserire solo lettere</div>
+      </div>
+    </div>
+
+    <div class="form-group col-sm-6">
+      <label for="lastname">Cognome</label>
+      <input required minlength="3" pattern="[a-zA-Z\s]*" #lastName="ngModel" placeholder="Cognome"
+             [(ngModel)]="user.lastname"
+             class="form-control" name="lastname" id="lastname">
+      <div *ngIf="lastName.dirty && lastName.touched && lastName.invalid">
+        <div class="alert-danger" *ngIf="lastName.error.required">Il campo Cognome è obbligatotio</div>
+        <div class="alert-danger" *ngIf="lastName.errors.minlength">La lunghezza minima è
+          di {{lastName.errors.minlength.requiredLength}} caratteri
+        </div>
+        <div class="alert-danger" *ngIf="lastName.errors.pattern">Inserire solo lettere</div>
+      </div>
+    </div>
+
   </div>
-  <div class="form-group">
-    <label for="lastname">Cognome</label>
-    <input [(ngModel)]="user.lastname" class="form-control" name="lastname" id="lastname">
+  <div class="form-row">
+    <div class="form-group col-sm-6">
+      <label for="fiscalcode">Codice Fiscale</label>
+      <input [(ngModel)]="user.fiscalcode" class="form-control" name="fiscalcode" id="fiscalcode">
+    </div>
+    <div class="form-group col-sm-6">
+      <label for="email">Email</label>
+      <input [(ngModel)]="user.email" class="form-control" type="email" name="email" id="email">
+    </div>
   </div>
-  <div class="form-group">
-    <label for="fiscalcode">Codice Fiscale</label>
-    <input [(ngModel)]="user.fiscalcode" class="form-control" name="fiscalcode" id="fiscalcode">
+  <div class="form-row">
+    <div class="form-group col-sm-6">
+      <label for="phone">Telefono</label>
+      <input [(ngModel)]="user.phone" class="form-control" name="phone" id="phone">
+    </div>
+    <div class="form-group col-sm-6">
+      <label for="age">Età</label>
+      <input type="number" [(ngModel)]="user.age" class="form-control" name="age" id="age">
+    </div>
   </div>
-  <div class="form-group">
-    <label for="email">Email</label>
-    <input [(ngModel)]="user.email" class="form-control" type="email" name="email" id="email">
-  </div>
-  <div class="form-group">
-    <label for="phone">Telefono</label>
-    <input [(ngModel)]="user.phone" class="form-control" name="phone" id="phone">
-  </div>
-  <div class="form-group">
-    <label for="province">Provincia</label>
-    <input [(ngModel)]="user.province" class="form-control" name="province" id="province">
-  </div>
-  <div class="form-group">
-    <label for="age">Età</label>
-    <input type="number" [(ngModel)]="user.age" class="form-control" name="age" id="age">
+  <div class="form-row">
+    <div class="form-group col-sm-6 offset-sm-3">
+      <label for="province">Provincia</label>
+      <input [(ngModel)]="user.province" class="form-control" name="province" id="province">
+    </div>
   </div>
   <div class="text-center form-group form-footer">
     <button class="btn btn-primary" (click)="backToUsers()">BACK</button>
     <button class="btn btn-secondary" (click)="resetForm(f.form)">RESET</button>
-    <button class="btn btn-success" (click)="saveUser()">SAVE</button>
+    <button [disabled]="f.invalid" class="btn btn-success" (click)="saveUser()">SAVE</button>
   </div>
 </form>

@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
 
 export class UserComponent implements OnInit {
   @Input('user-data') user: User;
-  @Output('onDeleteUser') userDeleted = new EventEmitter();
+  @Output('onDeleteUser') userDeleted  = new EventEmitter();
   @Output() onSelectUser = new EventEmitter();
 
   constructor(private userService: UserService, private route: Router) { }
@@ -28,8 +28,11 @@ export class UserComponent implements OnInit {
     this.onSelectUser.emit(this.user);
   }
 
+
   deleteUser() {
-    //this.userDeleted.emit(this.user);
-    this.userService.deleteUser(this.user);
+    this.userDeleted.emit(this.user);
+    // this.userService.deleteUser(this.user);
   }
+
+
 }
