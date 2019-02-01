@@ -15,6 +15,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { UserDataComponent } from './user-data/user-data.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { RequiredFieldsComponent } from './required-fields/required-fields.component';
 
 const routes: Routes = [
   {
@@ -50,6 +51,7 @@ const routes: Routes = [
     NavComponent,
     ModalBasicComponent,
     UserDataComponent,
+    RequiredFieldsComponent,
       ],
   imports: [
     BrowserModule,

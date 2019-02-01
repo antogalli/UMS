@@ -4,8 +4,7 @@
     <div class="form-group col-sm-6">
       <label for="firstname">Nome</label>
       <input required minlength="3" pattern="[a-zA-Z\s]*" #firstName="ngModel" placeholder="Nome"
-             [(ngModel)]="user.name"
-             class="form-control" name="firstname" id="firstname">
+             [(ngModel)]="user.name" class="form-control" name="firstname" id="firstname">
       <div *ngIf="firstName.dirty && firstName.touched && firstName.invalid">
         <div class="alert-danger" *ngIf="firstName.errors.required">Il campo nome è obbligatorio</div>
         <div class="alert-danger" *ngIf="firstName.errors.minlength">La lunghezza minima è
@@ -18,22 +17,23 @@
     <div class="form-group col-sm-6">
       <label for="lastname">Cognome</label>
       <input required minlength="3" pattern="[a-zA-Z\s]*" #lastName="ngModel" placeholder="Cognome"
-             [(ngModel)]="user.lastname"
-             class="form-control" name="lastname" id="lastname">
+             [(ngModel)]="user.lastname" class="form-control" name="lastname" id="lastname">
       <div *ngIf="lastName.dirty && lastName.touched && lastName.invalid">
-        <div class="alert-danger" *ngIf="lastName.error.required">Il campo Cognome è obbligatotio</div>
+        <div class="alert-danger" *ngIf="lastName.errors.required">Il campo Cognome è obbligatotio</div>
         <div class="alert-danger" *ngIf="lastName.errors.minlength">La lunghezza minima è
           di {{lastName.errors.minlength.requiredLength}} caratteri
         </div>
         <div class="alert-danger" *ngIf="lastName.errors.pattern">Inserire solo lettere</div>
       </div>
     </div>
-
   </div>
   <div class="form-row">
     <div class="form-group col-sm-6">
       <label for="fiscalcode">Codice Fiscale</label>
-      <input [(ngModel)]="user.fiscalcode" class="form-control" name="fiscalcode" id="fiscalcode">
+      <input required minlength="16" [(ngModel)]="user.fiscalcode" #fiscalcode="ngModel" placeholder="Codice Fiscale"
+             class="form-control" name="fiscalcode" id="fiscalcode">
+      {{ fiscalcode.placeholder }}
+      <app-required-fields [nomeCampo]="fiscalcode"></app-required-fields>
     </div>
     <div class="form-group col-sm-6">
       <label for="email">Email</label>

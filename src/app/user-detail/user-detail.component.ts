@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {User} from '../classes/user';
 import {UserService} from '../services/user.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import { RequiredFieldsComponent} from '../required-fields/required-fields.component';
 
 @Component({
   selector: 'app-user-detail',
