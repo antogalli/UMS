@@ -20,10 +20,9 @@
              [(ngModel)]="user.lastname" class="form-control" name="lastname" id="lastname">
       <div *ngIf="lastName.dirty && lastName.touched && lastName.invalid">
         <div class="alert-danger" *ngIf="lastName.errors.required">Il campo Cognome è obbligatotio</div>
-        <div class="alert-danger" *ngIf="lastName.errors.minlength">La lunghezza minima è
-          di {{lastName.errors.minlength.requiredLength}} caratteri
+        <div class="alert-danger" *ngIf="lastName.errors.minlength">La lunghezza minima è di {{lastName.errors.minlength.requiredLength}} caratteri
         </div>
-        <div class="alert-danger" *ngIf="lastName.errors.pattern">Inserire solo lettere</div>
+        <div class="alert-danger" *ngIf="lastName.errors.pattern">Caratteri consentiti {{ lastName.errors.pattern.requiredPattern }}</div>
       </div>
     </div>
   </div>
@@ -32,8 +31,7 @@
       <label for="fiscalcode">Codice Fiscale</label>
       <input required minlength="16" [(ngModel)]="user.fiscalcode" #fiscalcode="ngModel" placeholder="Codice Fiscale"
              class="form-control" name="fiscalcode" id="fiscalcode">
-      {{ fiscalcode.placeholder }}
-      <app-required-fields [nomeCampo]="fiscalcode"></app-required-fields>
+            <app-required-fields [nomeCampo]="fiscalcode"></app-required-fields>
     </div>
     <div class="form-group col-sm-6">
       <label for="email">Email</label>
@@ -47,7 +45,8 @@
     </div>
     <div class="form-group col-sm-6">
       <label for="age">Età</label>
-      <input type="number" [(ngModel)]="user.age" class="form-control" name="age" id="age">
+      <input required minlength="2" maxlength="3" pattern="[0-9]{2,3}" type="number" #age="ngModel" [(ngModel)]="user.age" class="form-control" name="age" id="age">
+      <app-required-fields [nomeCampo]="age"></app-required-fields>
     </div>
   </div>
   <div class="form-row">

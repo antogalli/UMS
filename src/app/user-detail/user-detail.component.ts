@@ -2,7 +2,6 @@ import {Component, Input, OnInit} from '@angular/core';
 import {User} from '../classes/user';
 import {UserService} from '../services/user.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import { RequiredFieldsComponent} from '../required-fields/required-fields.component';
 
 @Component({
   selector: 'app-user-detail',
@@ -29,12 +28,12 @@ export class UserDetailComponent implements OnInit {
   ngOnInit() {
     this.user = new User();
 
-    this.route.params.subscribe(
+    this.route.paramMap.subscribe(
       (params) => {
-        if (!params.id) {
+        if (!params.get('id')) {
           return;
         }
-        this.userService.getUser(+params.id).subscribe(
+        this.userService.getUser(+params.get('id')).subscribe(
           (response) => {
             this.user = response['data'];
           }
