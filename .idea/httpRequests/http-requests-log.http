@@ -1,3 +1,75 @@
+POST http://localhost:8000/api/auth/me?email=antonio@gmail.com&password=password&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0OTM2MjYzMCwiZXhwIjoxNTQ5MzY2MjMwLCJuYmYiOjE1NDkzNjI2MzAsImp0aSI6IlBqZGtDaXhUN1dpTmJGS0UiLCJzdWIiOjUyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6IkFudG9uaW8iLCJlbWFpbCI6ImFudG9uaW9AZ21haWwuY29tIn0.DMHkegVEwbB4_MybgfDWIF_v48zqBtfn7lPFIQoKe4Y
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-05T113054.200.json
+
+###
+
+POST http://localhost:8000/api/auth/login?email=antonio@gmail.com&password=password&token=QHdxuVlbAUei5AKjTdirD9DDEg3GrQrh
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-05T113030.200.json
+
+###
+
+POST http://localhost:8000/api/auth/me?email=antonio@gmail.com&password=password&token=QHdxuVlbAUei5AKjTdirD9DDEg3GrQrh
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-05T112956.302.html
+
+###
+
+POST http://localhost:8000/api/auth/me?email=antonio@gmail.com&password=password
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-05T112907.302.html
+
+###
+
+POST http://localhost:8000/api/auth/login?email=antonio@gmail.com&password=password
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-05T112835.200.json
+
+###
+
+POST http://localhost:8000/api/auth/login?email=ant.uno@gmail.com&password=galliweb
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-05T112805.401.json
+
+###
+
+POST http://localhost:8000/api/auth/login?email=ant.uno@gmail.com&password=galliweb
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-05T112804.401.json
+
+###
+
+POST http://localhost:8000/api/auth/login?email=ant.uno@gmail.com&password=qweqwe
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-05T112606.401.json
+
+###
+
+POST http://localhost:8000/api/auth/login?email=ant.uno@gmail.com&password=qweqwe
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-05T112456.401.json
+
+###
+
 POST http://localhost:8000/users/1?_method=DELETE
 Accept: */*
 Cache-Control: no-cache

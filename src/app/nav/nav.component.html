@@ -9,14 +9,12 @@
         <a class="nav-link" href="#" routerLink="">Home</a>
       </li>
       <li class="nav-item active">
-        <a class="nav-link" href="#" routerLink="/users">Users</a>
+        <a *ngIf="isUserLoggedIn" class="nav-link" href="#" routerLink="/users">Users</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#" routerLink="users/new">New User</a>
+        <a *ngIf="isUserLoggedIn" class="nav-link" href="#" routerLink="users/new">New User</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
+
     </ul>
 
     <form class="form-inline mt-2 mt-md-0">
@@ -29,6 +27,9 @@
       </li>
       <li class="nav-item text-nowrap">
         <a *ngIf="!isUserLoggedIn" class="nav-link" href="#" (click)="signUp($event)">Sign up</a>
+      </li>
+      <li *ngIf="isUserLoggedIn">
+        <span class="nav-link nav-item">{{ username }}</span>
       </li>
       <li class="nav-item text-nowrap">
         <a *ngIf="isUserLoggedIn" class="nav-link" href="#" (click)="logout($event)">Sign out</a>

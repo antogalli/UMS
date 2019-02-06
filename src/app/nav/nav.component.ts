@@ -1,6 +1,7 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {AuthService} from '../services/auth.service';
 import {Router} from '@angular/router';
+import {User} from '../classes/User';
 
 @Component({
   selector: 'app-nav',
@@ -11,11 +12,36 @@ export class NavComponent implements OnInit {
   @Output() onNewUser = new EventEmitter();
 
   private isUserLoggedIn = false;
+  private username: string;
+  constructor(private auth: AuthService, private router: Router) {
+    this.auth.userSignedIn.subscribe(
+      (user: User) => {
+        this.username = user.name;
+        this.isUserLoggedIn = true;
+      }
+    );
 
-  constructor(private auth: AuthService, private router: Router) { }
+    this.auth.userSignedUp.subscribe(
+      (user: User) => {
+        this.username = user.name;
+        this.isUserLoggedIn = true;
+      }
+    );
+
+    this.auth.userLogOut.subscribe(
+      () => {
+        this.username = '';
+        this.isUserLoggedIn = false;
+      }
+    );
+  }
 
   ngOnInit() {
     this.isUserLoggedIn = this.auth.isUserLoggedIn();
+    if (this.isUserLoggedIn) {
+      const user = this.auth.getUser();
+      this.username = user.name;
+    }
   }
 
   newUser() {
