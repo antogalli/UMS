@@ -1,3 +1,59 @@
+POST http://localhost:8000/api/auth/signup?email=antonio@gmail.com&password=password
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-07T110548.500.html
+
+###
+
+POST http://localhost:8000/api/auth/signup?email=antonio@gmail.com&password=password
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-07T105611.500.html
+
+###
+
+POST http://localhost:8000/api/auth/signup?email=antonio@gmail.com&password=password
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-07T104819.500.html
+
+###
+
+POST http://localhost:8000/api/auth/signup?email=antonio@gmail.com&password=password
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-07T104405.500.html
+
+###
+
+POST http://localhost:8000/api/auth/signup?email=antonio@gmail.com&password=password
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-07T104349.500.html
+
+###
+
+POST http://localhost:8000/api/auth/signup?email=antonio@gmail.com&password=password
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-07T103653.500.html
+
+###
+
+POST http://localhost:8000/api/auth/signup?email=antonio@gmail.com&password=password
+Accept: */*
+Cache-Control: no-cache
+
+<> 2019-02-07T103508.500.html
+
+###
+
 POST http://localhost:8000/api/auth/me?email=antonio@gmail.com&password=password&token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC9sb2NhbGhvc3Q6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTU0OTM2MjYzMCwiZXhwIjoxNTQ5MzY2MjMwLCJuYmYiOjE1NDkzNjI2MzAsImp0aSI6IlBqZGtDaXhUN1dpTmJGS0UiLCJzdWIiOjUyLCJwcnYiOiI4N2UwYWYxZWY5ZmQxNTgxMmZkZWM5NzE1M2ExNGUwYjA0NzU0NmFhIiwibmFtZSI6IkFudG9uaW8iLCJlbWFpbCI6ImFudG9uaW9AZ21haWwuY29tIn0.DMHkegVEwbB4_MybgfDWIF_v48zqBtfn7lPFIQoKe4Y
 Accept: */*
 Cache-Control: no-cache
